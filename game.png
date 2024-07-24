@@ -6,11 +6,17 @@ window_size = (800, 600)
 screen = pygame.display.set_mode(window_size)
 pygame.display.set_caption("тестовый проект")
 
+image = pygame.image.load("game.png")
+image_rect = image.get_rect()
+
+
 run = True
 while run:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
     screen.fill((200, 25, 100))
+    screen.blit(image, image_rect)
+
     pygame.display.flip()
 pygame.quit()
